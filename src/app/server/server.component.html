@@ -1,2 +1,18 @@
+<h3>I'm the Server Component</h3>
 
-  <h3>I'm the Server Component</h3>
+
+<!-- String Interpolation -->
+<!-- one way data binding -->
+<!-- no multi line expression inside the string interpolation  -->
+<p 
+ [ngStyle]="{backgroundColor: getColor()}"
+ [ngClass]="{online: serverStatus === 'online'}"
+>{{'Server'}} with ID {{ serverId }} is {{ serverStatus }}</p>
+<!-- 
+<ul>
+  <li *ngFor="let user of users">
+  {{ user.id}} = {{user.name}} ----- {{user.profession}}
+  </li>
+</ul>
+<p>Current server status: <span class="bg-warning">{{ getServerStatus()}}</span> </p>
+---------- -->

@@ -6,6 +6,11 @@
       <!-- <div app-servers></div> -->
       <app-header></app-header>
       <app-servers></app-servers>
+      <app-server></app-server>
     </div>
-  </div>
+
+  <!-- <p [innerText]="allowNewServer"></p>   -->
+ </div>      <!-- directly binding the html element  -->
+  <button class="btn btn-primary mt-5" [disabled]="!allowNewServer">Add Server</button>
 </div>
+<p class="bg-dark text-white my-5">{{serverCreationStatus}}</p>

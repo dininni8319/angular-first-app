@@ -1,3 +1,37 @@
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+<!-- <app-server></app-server> -->
 
+<!-- event binding  -->
+<!-- <p class="bg-warning ">{{serverCreationStatus}}</p> -->
+<!-- <input
+ type="text"
+ class="form-control mb-3"
+ (input)="onUpdateServerName($event)"
+> -->
+
+
+ <!-- two way binding  -->
+<input
+ type="text"
+ class="form-control"
+ (input)="onUpdateServerName($event)"
+ [(ngModel)]="serverName" 
+>
+
+<input
+ type="text"
+ class="form-control my-5"
+ (input)="onUpdateUsername($event)"
+ [(ngModel)]="username" 
+>
+<p class="text-white p-5 bg-danger">{{ username }}</p>
+
+<p class="bg-dark text-white p-5">{{serverName}}</p>
+<button class="btn btn-danger mb-5" (click)="onResetUseranme()" [disabled]="!username">Update the Username</button>
+<button class="btn btn-warning mb-5" (click)="onCreateServer()">Create a Server</button>
+
+
+<p class="text-success" *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
+<ng-template #noServer>
+  No server was created
+</ng-template>
